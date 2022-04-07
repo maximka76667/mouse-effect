@@ -1,0 +1,102 @@
+.tutorial {
+  --color-text: #fff;
+  --color-bg: #171717;
+  --color-link: #ff0000;
+  background-color: var(--color-bg);
+  margin: 0;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page, .page a {
+  cursor: none;
+}
+
+.page__inner {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.cursor--small {
+  width: 5px;
+  height: 5px;
+  top: -2.5px;
+  left: -2.5px;
+  border-radius: 50%;
+  z-index: 10;
+  background: var(--color-text);
+}
+
+.cursor--canvas {
+  width: 100vw;
+  height: 100vh;
+  z-index: 12;
+}
+
+.nav {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.link {
+  display: flex;
+  width: 75px;
+  height: 75px;
+  margin: 0 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.settings-icon {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+.settings-icon__line {
+  stroke: var(--color-text);
+  stroke-width: 5px;
+  transition: all 0.2s ease 0.05s;
+}
+
+.settings-icon__rect {
+  stroke: var(--color-text);
+  fill: var(--color-bg);
+  stroke-width: 5px;
+  transition: all 0.2s ease 0.05s;
+}
+
+.link:hover .settings-icon__line,
+.link:hover .settings-icon__rect {
+  stroke: var(--color-link);
+}
+
+.link:hover .settings-icon__group--1 .settings-icon__rect {
+  transform: translateY(15px);
+}
+
+.link:hover .settings-icon__group--2 .settings-icon__rect {
+  transform: translateY(-25px);
+}
+
+.link:hover .settings-icon__group--3 .settings-icon__rect {
+  transform: translateY(30px);
+}
